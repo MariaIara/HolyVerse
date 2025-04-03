@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-body div{
-    height: 70vh;
-    display: grid;
-    place-items: center;
-    font-family: 'JetBrains Mono', monospace;
+/*! tailwindcss v4.1.1 | MIT License | https://tailwindcss.com */
+.static {
+  position: static;
+}
+.hidden {
+  display: none;
+}
+.table {
+  display: table;
+}
+.text-center {
+  text-align: center;
+}
+.underline {
+  text-decoration-line: underline;
 }

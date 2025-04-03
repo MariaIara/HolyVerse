@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HefestosPHP - Home</title>
-    <link rel="stylesheet" href="<?=url_base('hefestos.css')?>">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
-    <div>
-        <h1></h1>
-    </div>
-    <script>
-        const msg = 'HefestosPHP - Hello, World!'
-        const h1 = document.getElementsByTagName('h1')[0]
-    
-        function digitar(i){
-
-            h1.innerHTML += msg.charAt(i)
-
-            if(i < msg.length){
-                setTimeout(() => {digitar(i+1)}, 100)
-            }
-        }
-
-        digitar(0)
-    </script>
+    <h1 class="text-3xl font-bold text-center underline mt-72">
+        Hello world!
+        <br>
+        HolyVerse
+    </h1>
 </body>
+
 </html>
