@@ -6,23 +6,20 @@ do ambiente (desenvolvimento, producao ou outro definido por você).
 ---------------------------------------------------------------------- */
 
 return [
-
     'producao' => [
-        'driver'  => 'mysql', // mysql ou sqlite
-        'host'    => 'localhost', // caso driver seja mysql
-        'nome_db'  => 'olimpo', // caso driver seja mysql
+        'driver'  => 'mysql',
+        'host'    => 'localhost',
+        'nome_db'  => 'olimpo',
         'usuario' => 'root',
         'senha'   => 'senha_segura_123',
-        'sqlite'  => '', // caso driver seja sqlite
+        'sqlite'  => '',
     ],
 
-
     'desenvolvimento' => [
-        'driver'  => 'sqlite', // mysql ou sqlite
-        'sqlite'  => 'app/Database/sqlite/banco_de_dados.sqlite', // caso driver seja sqlite
-        'host'    => '', // caso driver seja mysql
-        'nome_db'  => '', // caso driver seja mysql
-        'usuario' => '', // caso driver seja mysql
-        'senha'   => '', // caso driver seja mysql
+        'driver'  => 'mysql',
+        'host'    => 'localhost',
+        'nome_db'  => 'holyverse',
+        'usuario' => 'root',
+        'senha'   => '',
     ]
 ];
