@@ -6,5 +6,5 @@ que deve ser utilizada nesse filtro (com namespace completo).
 ---------------------------------------------------------------------- */
 
 return [
-
+    'logged' => 'App\Filtros\AutenticatedFilter'
 ];
