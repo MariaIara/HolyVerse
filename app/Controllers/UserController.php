@@ -18,14 +18,19 @@ class UserController extends Controller
 
         $user_model = new User();
 
-        if($user_model->primeiroOnde(['email' => $form_data['email'], 'email'])){
+        if ($user_model->where('email', $form_data['email'])->primeiro()) {
             return redirecionar('/register')->com('feedback', 'Já existe um usuário com este email!');
         }
-        
+
         $form_data['password'] = encriptar($form_data['password']);
         $user_model->insert($form_data);
 
-        return redirecionar('/login');
+        $user = $user_model->where('email', $form_data['email'])->primeiro();
+        unset($user['password']);
+
+        sessao()->guardar('user', $user);
+
+        return redirecionar('/home');
     }
 
     public function loginView()
@@ -39,18 +44,21 @@ class UserController extends Controller
 
         $user_model = new User();
 
-        $autenticateted_user = $user_model->where('email', $form_data['email'])->primeiro();
+        $user = $user_model->where('email', $form_data['email'])->primeiro();
 
-        if(!$autenticateted_user || !password_verify($form_data['password'], $autenticateted_user['password'])){
+        if (!$user || !password_verify($form_data['password'], $user['password'])) {
             return redirecionar('/login')->com('feedback', 'Dados inválidos!');
         }
 
-        sessao()->guardar('user', $autenticateted_user);
-        
+        unset($user['password']);
+
+        sessao()->guardar('user', $user);
+
         return redirecionar('/home');
     }
 
-    public function logout(){
+    public function logout()
+    {
         sessao()->destruir();
 
         return redirecionar('/login');
