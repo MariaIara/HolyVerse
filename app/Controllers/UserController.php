@@ -7,6 +7,13 @@ use Hefestos\Core\Controller;
 
 class UserController extends Controller
 {
+    private User $user_model;
+
+    public function __construct(User $user_model)
+    {
+        $this->user_model = $user_model;
+    }
+
     public function registerView()
     {
         return view('auth/register');
@@ -16,16 +23,14 @@ class UserController extends Controller
     {
         $form_data = $this->dadosPost();
 
-        $user_model = new User();
-
-        if ($user_model->where('email', $form_data['email'])->primeiro()) {
+        if ($this->user_model->where('email', $form_data['email'])->primeiro()) {
             return redirecionar('/register')->com('feedback', 'Já existe um usuário com este email!');
         }
 
         $form_data['password'] = encriptar($form_data['password']);
-        $user_model->insert($form_data);
+        $this->user_model->insert($form_data);
 
-        $user = $user_model->where('email', $form_data['email'])->primeiro();
+        $user = $this->user_model->where('email', $form_data['email'])->primeiro();
         unset($user['password']);
 
         sessao()->guardar('user', $user);
@@ -42,9 +47,7 @@ class UserController extends Controller
     {
         $form_data = $this->dadosPost();
 
-        $user_model = new User();
-
-        $user = $user_model->where('email', $form_data['email'])->primeiro();
+        $user = $this->user_model->where('email', $form_data['email'])->primeiro();
 
         if (!$user || !password_verify($form_data['password'], $user['password'])) {
             return redirecionar('/login')->com('feedback', 'Dados inválidos!');
