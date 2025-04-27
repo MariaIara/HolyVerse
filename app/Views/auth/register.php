@@ -15,7 +15,12 @@
             <label for="password" class="block">Senha</label>
             <input type="password" class="bg-[#F5F5F5] border border-[#D9D9D9] px-2 py-2 w-full mt-1.5 rounded-2xl" name="password" placeholder="************" required>
         </div>
-        <div class="mt-10">
+        <?php if (sessao()->pegar('feedback')) : ?>
+            <div class="mt-5">
+                <p class="text-center text-red-500 text-base"><?= sessao()->pegar('feedback') ?></p>
+            </div>
+        <?php endif; ?>
+        <div class="<?= sessao()->pegar('feedback') ? 'mt-5' : 'mt-10' ?>">
             <button type="submit" class="bg-[#E76F51] cursor-pointer block w-full py-2 rounded-full text-white font-semibold hover:bg-[#D65F43] transition-all duration-150 ease-in-out">Criar Conta</button>
             <p class="text-sm text-center mt-5">Já tem uma conta? <a href="/login" class="font-semibold underline">Fazer Login</a></p>
         </div>
