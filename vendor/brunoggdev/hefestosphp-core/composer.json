@@ -1,0 +1,29 @@
+{
+  "name": "brunoggdev/hefestosphp-core",
+  "type": "project-core",
+  "description": "Core da versão composer HefestosPHP - Framework MVC em português",
+  "homepage": "https://github.com/brunoggdev/hefestosphp",
+  "keywords": [
+    "framework",
+    "hefestos",
+    "mvc"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bruno Gomes",
+      "email": "brunoggdev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Hefestos\\": "src/system/"
+    }
+  },
+  "require": {
+    "php": "^8.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
