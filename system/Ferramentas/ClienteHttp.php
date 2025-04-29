@@ -13,7 +13,7 @@ class ClienteHttp
     private $status;
     private $erros;
     private $url_base;
-    private $headers;
+    private $headers = [];
 
 
     /**
@@ -157,11 +157,11 @@ class ClienteHttp
                     'Content-Type' => 'application/json',
                     'Content-Length' => strlen($data)
                 ]);
-                curl_setopt($this->curl, CURLOPT_HTTPHEADER, $this->headers);
-            }
-
+            }    
             curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
         }
+
+        curl_setopt($this->curl, CURLOPT_HTTPHEADER, $this->headers);
 
         $resposta = curl_exec($this->curl);
         $this->resposta = $resposta ?: curl_error($this->curl);

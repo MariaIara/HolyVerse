@@ -1,0 +1,56 @@
+{
+    "packages": [
+        {
+            "name": "brunoggdev/hefestosphp-core",
+            "version": "v1.3.3",
+            "version_normalized": "1.3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brunoggdev/hefestosphp-composer-core.git",
+                "reference": "bc2c3b885e8d2cd815b31114db310a926032bd90"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brunoggdev/hefestosphp-composer-core/zipball/bc2c3b885e8d2cd815b31114db310a926032bd90",
+                "reference": "bc2c3b885e8d2cd815b31114db310a926032bd90",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "time": "2025-04-28T19:45:20+00:00",
+            "type": "project-core",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "Hefestos\\": "src/system/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Gomes",
+                    "email": "brunoggdev@gmail.com"
+                }
+            ],
+            "description": "Core da versão composer HefestosPHP - Framework MVC em português",
+            "homepage": "https://github.com/brunoggdev/hefestosphp",
+            "keywords": [
+                "framework",
+                "hefestos",
+                "mvc"
+            ],
+            "support": {
+                "issues": "https://github.com/brunoggdev/hefestosphp-composer-core/issues",
+                "source": "https://github.com/brunoggdev/hefestosphp-composer-core/tree/v1.3.3"
+            },
+            "install-path": "../brunoggdev/hefestosphp-core"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
