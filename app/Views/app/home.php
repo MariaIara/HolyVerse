@@ -25,8 +25,8 @@
             </a>
         </div>
         <div class="pt-4 sm:pt-8">
-            <p class="italic text-lg">“No princípio era a Palavra, e a Palavra estava com Deus e a Palavra era Deus.”</p>
-            <p class="mt-3 text-lg opacity-50">João 1:1</p>
+            <p class="italic text-lg" id="daily-verse">“No princípio era a Palavra, e a Palavra estava com Deus e a Palavra era Deus.”</p>
+            <p class="mt-3 text-lg opacity-50" id="reference">João 1:1</p>
         </div>
     </div>
 </section>
@@ -44,3 +44,32 @@
 </section>
 
 <?= comp('foot') ?>
+
+<script>
+    const daily_verse = document.getElementById('daily-verse')
+    const reference = document.getElementById('reference')
+
+    async function fetchVerse() {
+        try {
+            const response = await fetch('https://www.abibliadigital.com.br/api/verses/nvi/random', {
+                headers: {
+                    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHIiOiJXZWQgQXByIDMwIDIwMjUgMDA6MDI6MjkgR01UKzAwMDAubWFyaWFpYXJhc2JyYWdhQGdtYWlsLmNvbSIsImlhdCI6MTc0NTk3MTM0OX0.MipqEq5U2G432Zb1kMK-Ji-BzBX3ed7nXpvlPc2SzKo',
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const response_json = await response.json()
+
+            const verse_api = response_json.text
+            daily_verse.innerText = verse_api
+
+            const reference_api = response_json.book.name + ' ' + response_json.chapter + ':' + response_json.number
+            reference.innerText = reference_api
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    fetchVerse()
+</script>
