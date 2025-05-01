@@ -45,7 +45,7 @@
 
 <?= comp('foot') ?>
 
-<script>
+<!-- <script>
     const daily_verse = document.getElementById('daily-verse')
     const reference = document.getElementById('reference')
 
@@ -72,4 +72,4 @@
     }
 
     fetchVerse()
-</script>
+</script> -->
