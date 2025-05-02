@@ -16,8 +16,14 @@ class HomeController extends Controller
 
     public function home()
     {
-        $verse = $this->daily_verse_model->get();
+        $response = $this->daily_verse_model->getVerse();
 
-        return view('app/home');
+        $verse = $response['text'];
+        $reference = $response['book']['name'] . ' ' . $response['chapter'] . ':' . $response['number'];
+
+        return view('app/home', [
+            'verse' => $verse,
+            'reference' => $reference
+        ]);
     }
 }

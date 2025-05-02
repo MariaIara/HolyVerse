@@ -13,7 +13,6 @@ Rota::get('/', function () {
 });
 
 Rota::get('/register', [UserController::class, 'registerView']);
-
 Rota::post('/register', [UserController::class, 'register']);
 
 Rota::get('/login', [UserController::class, 'loginView']);

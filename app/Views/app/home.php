@@ -25,8 +25,8 @@
             </a>
         </div>
         <div class="pt-4 sm:pt-8">
-            <p class="italic text-lg" id="daily-verse">“No princípio era a Palavra, e a Palavra estava com Deus e a Palavra era Deus.”</p>
-            <p class="mt-3 text-lg opacity-50" id="reference">João 1:1</p>
+            <p class="italic text-lg" id="daily-verse"><?= $verse ?></p>
+            <p class="mt-3 text-lg opacity-50" id="reference"><?= $reference ?></p>
         </div>
     </div>
 </section>
