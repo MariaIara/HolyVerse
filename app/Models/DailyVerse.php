@@ -9,7 +9,7 @@ class DailyVerse extends Model
 {
     protected string $tabela = 'dailyverses';
 
-    public function getVerse()
+    public function getVerse(): array
     {
         // Requisição para a API
         $response = (new ClienteHttp())
@@ -21,5 +21,10 @@ class DailyVerse extends Model
 
         // Retornar resposta
         return $response;
+    }
+
+    public function formatReference(array $response): string
+    {
+        return $response['book']['name'] . ' ' . $response['chapter'] . ':' . $response['number'];
     }
 }
