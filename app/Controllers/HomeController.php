@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $response = $this->daily_verse_model->getVerse();
 
-        $verse = $response['text'];
+        $verse = $response['verse'];
         $reference = $this->daily_verse_model->formatReference($response);
 
         return view('app/home', [
