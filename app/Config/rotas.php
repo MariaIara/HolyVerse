@@ -5,6 +5,8 @@ função anonima ou um metodo de controller. Consulte a documentação.
 ---------------------------------------------------------------------- */
 
 use App\Controllers\HomeController;
+use App\Controllers\NewController;
+use App\Controllers\OldController;
 use Hefestos\Rotas\Rota;
 use App\Controllers\UserController;
 
@@ -21,3 +23,6 @@ Rota::post('/login', [UserController::class, 'login']);
 Rota::post('/logout', [UserController::class, 'logout'])->filtro('logged');
 
 Rota::get('/home', [HomeController::class, 'home'])->filtro('logged');
+
+Rota::get('/bible/old', [OldController::class, 'index'])->filtro('logged');
+Rota::get('/bible/new', [NewController::class, 'index'])->filtro('logged');
