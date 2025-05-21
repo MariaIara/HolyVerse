@@ -34,12 +34,12 @@
 <section class="px-2 lg:px-0 max-w-3xl mx-auto my-10">
     <h3 class="text-xl font-bold">Bíblia digital 📖</h3>
     <div class="block md:flex justify-between gap-10 mt-5">
-        <div class="cursor-pointer bg-[#1B9AAA] w-full rounded-[32px] mb-5 md:mb-0 py-6 px-8 hover:scale-[0.98] transition-all duration-150 ease-in-out">
+        <a href="/bible/old" class="cursor-pointer bg-[#1B9AAA] w-full rounded-[32px] mb-5 md:mb-0 py-6 px-8 hover:scale-[0.98] transition-all duration-150 ease-in-out">
             <h2 class="text-5xl text-white font-[newsreader] font-semibold">Antigo <br> <span class="italic font-bold">Testamento</span></h2>
-        </div>
-        <div class="cursor-pointer bg-[#E76F51] w-full rounded-[32px] py-6 px-8 hover:scale-[0.98] transition-all duration-150 ease-in-out">
+        </a>
+        <a href="/bible/new" class="cursor-pointer bg-[#E76F51] w-full rounded-[32px] py-6 px-8 hover:scale-[0.98] transition-all duration-150 ease-in-out">
             <h2 class="text-5xl text-white font-[newsreader] font-semibold">Novo <br> <span class="italic font-bold">Testamento</span></h2>
-        </div>
+        </a>
     </div>
 </section>
 
