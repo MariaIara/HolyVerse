@@ -7,7 +7,7 @@ use App\Interfaces\APIBibleInterface;
 use App\Models\DailyVerse;
 use Hefestos\Core\Controller;
 
-class HomeController extends Controller
+class BibleController extends Controller
 {
     private DailyVerse $daily_verse_model;
     protected APIBibleInterface $bible_api;
@@ -18,13 +18,16 @@ class HomeController extends Controller
         $this->bible_api = new ABibliaDigitalAdapter($this->daily_verse_model);
     }
 
-    public function home()
+    public function index($testament)
     {
-        [$verse, $reference] = $this->bible_api->getDailyVerse();
+        if (!in_array($testament, ['new', 'old'])) {
+            return redirecionar('/404');
+        }
 
-        return view('app/home', [
-            'verse' => $verse['verse'],
-            'reference' => $reference
+        $books = $this->bible_api->getBooks($testament);
+
+        return view('app/bible/' . $testament . '-testament', [
+            'books' => $books
         ]);
     }
 }

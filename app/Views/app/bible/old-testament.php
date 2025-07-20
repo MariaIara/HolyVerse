@@ -25,16 +25,9 @@
     </div>
     <div class="sm:max-h-58 sm:overflow-y-auto text-lg sm:text-xl md:text-2xl mt-4">
         <ul class="divide-y divide-gray-200">
-            <li class="py-2"><a href="#">Gênesis</a></li>
-            <li class="py-2"><a href="#">Êxodo</a></li>
-            <li class="py-2"><a href="#">Levítico</a></li>
-            <li class="py-2"><a href="#">Números</a></li>
-            <li class="py-2"><a href="#">Deuteronômio</a></li>
-            <li class="py-2"><a href="#">Josué</a></li>
-            <li class="py-2"><a href="#">Juízes</a></li>
-            <li class="py-2"><a href="#">Rute</a></li>
-            <li class="py-2"><a href="#">1 Samuel</a></li>
-            <li class="py-2"><a href="#">2 Samuel</a></li>
+            <?php foreach ($books as $book): ?>
+                <li class="py-2"><a href="#"><?= $book ?> </a></li>
+            <?php endforeach; ?>
         </ul>
     </div>
 </div>
